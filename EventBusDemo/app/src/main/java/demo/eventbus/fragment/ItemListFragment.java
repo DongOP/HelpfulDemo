@@ -55,7 +55,6 @@ public class ItemListFragment extends ListFragment {
                 android.R.id.text1,
                 event.getItems())
         );
-        Log.e("dong", "ItemListFragment...调用了..onEventMainThread: ");
     }
 
     @Override
@@ -63,5 +62,6 @@ public class ItemListFragment extends ListFragment {
         super.onListItemClick(l, v, position, id);
 
         EventBus.getDefault().post(getListView().getItemAtPosition(position));
+        Log.e("dong", "onListItemClick...post：" + getListView().getItemAtPosition(position));
     }
 }
