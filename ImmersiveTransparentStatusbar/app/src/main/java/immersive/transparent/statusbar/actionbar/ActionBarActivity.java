@@ -1,4 +1,4 @@
-package immersive.transparent.statusbar;
+package immersive.transparent.statusbar.actionbar;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import immersive.transparent.statusbar.R;
 
 public class ActionBarActivity extends AppCompatActivity {
 
