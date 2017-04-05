@@ -5,14 +5,15 @@
     <group android:checkableBehavior="single">
 
         <item
+            android:id="@+id/nav_menu_categories"
+            android:icon="@mipmap/ic_home_white_48dp"
+            android:checked="true"
+            android:title="首页信息" />
+
+        <item
             android:id="@+id/nav_menu_setting"
             android:icon="@mipmap/ic_settings_white_48dp"
             android:title="基本设置" />
-
-        <item
-            android:id="@+id/nav_menu_categories"
-            android:icon="@mipmap/ic_home_white_48dp"
-            android:title="版本信息" />
 
         <item
             android:id="@+id/nav_menu_feedback"
@@ -22,6 +23,29 @@
             android:id="@+id/nav_menu_loginOut"
             android:icon="@mipmap/login_out"
             android:title="退出登录" />
+
+        <item
+            android:id="@+id/action_other"
+            android:checked="false"
+            android:title="其他操作">
+
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/action_qq"
+                        android:checked="false"
+                        android:icon="@android:drawable/ic_btn_speak_now"
+                        android:title="QQ好友" />
+
+                    <item
+                        android:id="@+id/action_weixin"
+                        android:checked="false"
+                        android:icon="@android:drawable/ic_dialog_alert"
+                        android:title="微信好友" />
+
+                </group>
+            </menu>
+        </item>
 
     </group>
 </menu>
