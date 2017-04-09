@@ -41,7 +41,7 @@ public class CustomView extends RelativeLayout{
     protected void onAnimationEnd() {
         super.onAnimationEnd();
 
-        animation = true;
+        animation = false;
     }
 
     @Override
