@@ -29,9 +29,11 @@
 				}
 			}
 		} else if (requestCode == REQUEST_CODE_BACKGROUND_MUSIC) {
-			// ±³¾°ÒôÀÖ·þÎñ
-			Intent intent = new Intent(this,BackgroundMusicService.class);
-			bindService(intent, bgmConnection, BIND_AUTO_CREATE);
+			if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				// ±³¾°ÒôÀÖ·þÎñ
+				Intent intent = new Intent(this, BackgroundMusicService.class);
+				bindService(intent, bgmConnection, BIND_AUTO_CREATE);
+			}
 		} else {
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 				requestPermissions(
