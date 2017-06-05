@@ -1,6 +1,7 @@
 package com.allwinner.theatreplayer.album.contentProvider;
 
 import android.content.ContentProvider;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
@@ -12,7 +13,7 @@ import com.allwinner.theatreplayer.album.push.DBOpenHelper;
 
 /**
  * Created by Dong on 2017/6/2 0002.
- *
+ * <p>
  * 共享 photo数据库
  */
 
@@ -23,14 +24,8 @@ public class PhotoContentProvider extends ContentProvider {
     private static final UriMatcher mUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
     public static final String CONTENT_AUTHORITY = "com.allwinner.theatreplayer.album.PhotoContentProvider";
     private static final String PHOTO_TABLE_NAME = "photo";
-	/**
-	<provider android:name="com.allwinner.theatreplayer.album.contentProvider.PhotoContentProvider"
-            android:authorities="com.allwinner.theatreplayer.album.PhotoContentProvider"
-            android:exported="true">
-        </provider>
-	**/
-	
-	
+    private static final Uri CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY + "/photo");
+
     static {
         mUriMatcher.addURI(CONTENT_AUTHORITY, PHOTO_TABLE_NAME, PHOTO_CODE);
     }
@@ -67,16 +62,52 @@ public class PhotoContentProvider extends ContentProvider {
     @Nullable
     @Override
     public Uri insert(Uri uri, ContentValues values) {
+        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        switch (mUriMatcher.match(uri)) {
+            case PHOTO_CODE:
+                long rowID = db.insert(PHOTO_TABLE_NAME, null, values);
+                if (rowID > 0) {
+                    Uri retUri = ContentUris.withAppendedId(CONTENT_URI, rowID);
+                    return retUri;
+                }
+            break;
+
+            default:
+                throw new IllegalArgumentException("Unknown URI " + uri);
+        }
         return null;
     }
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        return 0;
+        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        int count = 0;
+        switch (mUriMatcher.match(uri)) {
+            case PHOTO_CODE:
+                count = db.delete(PHOTO_TABLE_NAME, selection, selectionArgs);
+                break;
+            default:
+                throw new IllegalArgumentException("Unknow URI :" + uri);
+        }
+        // 更新数据时，通知其他ContentObserver
+        this.getContext().getContentResolver().notifyChange(uri, null);
+
+        return count;
     }
 
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        return 0;
+        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        int count = 0;
+        switch (mUriMatcher.match(uri)) {
+            case PHOTO_CODE:
+                count = db.update(PHOTO_TABLE_NAME, values, selection, selectionArgs);
+                break;
+            default:
+                throw new IllegalArgumentException("Unknow URI : " + uri);
+        }
+        this.getContext().getContentResolver().notifyChange(uri, null);
+
+        return count;
     }
 }
