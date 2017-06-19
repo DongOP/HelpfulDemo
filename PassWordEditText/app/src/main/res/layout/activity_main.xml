@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.eagle.psdedittext.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+
+    <com.eagle.psdedittext.view.PasswordExitText
+        android:id="@+id/psd_ed"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_bg"
+        android:textCursorDrawable="@null"
+        style="@style/dialog_input_style" />
+</LinearLayout>
