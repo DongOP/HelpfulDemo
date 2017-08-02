@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TestScreenSaver</string>
+
+    <string name="tab_menu_alert">1</string>
+    <string name="tab_menu_profile">2</string>
+    <string name="tab_menu_pay">3</string>
+    <string name="tab_menu_setting">设置</string>
+
+    <string name="show_screen_saver_time">Min(s)</string>
+</resources>
