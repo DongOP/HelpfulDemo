@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:id="@+id/screen_saver"
+        style="@style/text_large"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/settings_item_height"
+        android:background="@drawable/list_middle_round"
+        android:clickable="true"
+        android:paddingLeft="@dimen/settings_margin_left"
+        android:text="屏保设置" />
+
+    <View style="@style/sound_content_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/sound_content_left"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/screen_saver_switch_ly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_middle_round"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingLeft="@dimen/settings_margin_left"
+            android:paddingRight="@dimen/settings_margin_right">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/text_large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/half_settings_item_height"
+                    android:text="屏保" />
+
+                <TextView
+                    style="@style/second_text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/half_settings_item_height"
+                    android:text="关闭后，屏保功能关闭" />
+            </LinearLayout>
+
+            <!--<com.allwinner.digitalphotoframe.settings.view.SwitchButton-->
+            <Switch
+                android:id="@+id/screen_saver_switch"
+                style="@style/SwitchButtonStyle"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/settings_margin_right" />
+        </RelativeLayout>
+
+        <View style="@style/sound_content_divider" />
+
+        <LinearLayout
+            android:id="@+id/screen_saver_child_ly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/night_mode_switch_ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/list_middle_round"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="@dimen/settings_margin_left"
+                android:paddingRight="@dimen/settings_margin_right">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/text_large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/half_settings_item_height"
+                        android:text="夜间模式" />
+
+                    <TextView
+                        style="@style/second_text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/half_settings_item_height"
+                        android:text="开启时，当系统时间在晚上12-7点，自动进入荧光时钟模式" />
+                </LinearLayout>
+
+                <!--<com.allwinner.digitalphotoframe.settings.view.SwitchButton-->
+                <Switch
+                    android:id="@+id/night_mode_switch"
+                    style="@style/SwitchButtonStyle"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/settings_margin_right" />
+            </RelativeLayout>
+
+            <View style="@style/sound_content_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/settings_item_height"
+                android:background="@drawable/list_middle_round"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/settings_margin_left"
+                android:paddingRight="@dimen/settings_margin_right">
+
+                <TextView
+                    style="@style/text_large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="屏保类型" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/text_about_info"
+                    android:layout_marginRight="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="荧光时钟" />
+            </LinearLayout>
+
+            <View style="@style/sound_content_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/text_large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/settings_margin_left"
+                    android:text="屏保时间" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/set_screensaver_left" />
+
+                    <SeekBar
+                        android:id="@+id/set_screen_saver_time"
+                        style="@style/progressbar_style"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:max="100"
+                        android:thumb="@drawable/dot_seekbar" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/set_screensaver_right" />
+
+                    <TextView
+                        style="@style/text_about_info"
+                        android:id="@+id/screen_saver_start_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/settings_margin_left"
+                        android:text="水平移动可设置屏保时间" />
+                </LinearLayout>
+
+                <View style="@style/sound_content_divider" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
