@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">ExternalStorage</string>
+	<string name="settings">Setting</string>
+    <string name="display_settings_light">Brightness</string>
+    <string name="sound_settings_volume">Sound</string>
+    <string name="dlg_ok_text">OK</string>
+    <string name="dlg_done_text">OK</string>
+    <string name="dlg_cancel_text">Cancel</string>
+    <string name="date_time_auto">Automatic date &amp; time</string>
+    <string name="date_time_auto_summary">Use network-provided time</string>
+    <string name="date_time_set_date">Set date</string>
+    <string name="date_time_set_time">Set time</string>
+    <string name="date_time_24hour">Use 24-hour format</string>
+    <string name="date_time_date_format">Date Format</string>
+    <string name="choose_timezone">Home City</string>
+    <string name="normal_date_format">"Manage Cities (<xliff:g id="DATE">%s</xliff:g>)"</string>
+    <string name="default_date_format"><xliff:g id="default_date_format">MM/dd/yyyy</xliff:g></string>
+    <string name="numeric_date_format">yyyy-M-d</string>
+    <string name="numeric_date_template" formatted="false">%s-%s-%s</string>
+    <string name="sound_settings">Sound</string>
+    <string name="display_settings">Brightness</string>
+    <string name="date_and_time_settings">Date &amp; Time</string>
+    <string name="restore_factory_settings">Factory data reset</string>
+    <string name="about_settings">About</string>
+    <string name="brightness">Brightness</string>
+    <string name="brightness_summary">Brightness adjust</string>
+    <string name="screen_timeout">Sleep</string>
+    <string name="screen_timeout_summary"><xliff:g id="TIMEOUT_DESCRIPTION">%1$s</xliff:g> inactivity</string>
+    <string name="volume">Volume</string>
+    <string name="sound_effects_enable_title">Touch Sound</string>
+    <string name="master_clear_desc">"This will erase from the internal storage including installed apps and system setting."</string>
+    <string name="master_clear_desc_erase_external_storage">"\n\nErase the SD card data including music &amp; pictures."</string>
+    <string name="master_clear_button_text">Reset</string>
+    <string name="master_clear_confirm_title">Reset confirm ?</string>
+    <string name="master_clear_final_desc">Confirm to factory data reset ?</string>
+    <string name="master_clear_final_button_text">Reset</string>
+    <string name="model_number">Model Number</string>
+    <string name="build_number">Hardware Ver</string>
+    <string name="volume_media">System Volume</string>
+    <string name="volume_notification">System Alert Sound</string>
+    <string name="bright_system">Smart Color</string>
+    <string name="bright_system_summary">It is better for playing video and picture </string>
+    <string name="suspend_ball">Floating Dock</string>
+    <string name="suspend_ball_summary">Floating back &amp; Home</string>
+    <string name="human_sensor">Motion control</string>
+    <string name="human_sensor_summary">Automatic Sleep if no motion detected.</string>
+	
+	<!-- for wifi -->
+	<string name="fragment_wifi_title">Wi-Fi connect</string>
+    <string name="fragment_wifi_hint">Switch on for Wi-Fi connection</string>
+    <string name="fragment_language_setting">Language Preferences</string>
+
+    <!-- 支持的语言 -->
+    <string name="lan_en">English</string>
+    <string name="lan_cn">中文简体</string>
+    <string name="lan_tw">中文繁體</string>
+
+    <string name="album_name">Cloud Picture Frame</string>
+    <string name="album_setting_name">Available Network</string>
+    <string name="getting">Add Network…</string>
+    <string name="soft_ver_num">Firmware Ver</string>
+    <string name="mac_num">MAC Address</string>
+    <string name="serial_num">Serial Number</string>
+
+    <!-- for 系统管理 -->
+    <string name="restore_factory_settings_title">Restore Factory Settings</string>
+    <string name="restore_factory_settings_1">This will erase from the internal storage, including:</string>
+    <string name="restore_factory_settings_2">1.Your accounts</string>
+    <string name="restore_factory_settings_3">2.System &amp; app data &amp; setting</string>
+
+    <!-- for 存储管理 -->
+    <string name="local_layout_text">Internal Storage</string>
+    <string name="local_total_text">Total:</string>
+    <string name="local_free_text">Free:</string>
+    <string name="sd_layout_text">SD Card</string>
+    <string name="usb_layout_text">USB Stick</string>
+    <string name="null_layout_text">Does not exist</string>
+    <string name="internet_layout_text">Cloud Storage</string>
+    <string name="service_term_text">Expire Date:</string>
+    <string name="renew_pay_btn">Pay for membership</string>
+    <string name="init_internet_text">Loading...</string>
+    <string name="init_internet_year">Loading...</string>
+
+    <!-- for 声音设置 -->
+    <string name="sound_second_text">Do not disturb mode</string>
+
+    <!-- 设备绑定界面 -->
+    <string name="device_unique_code">Model Code : </string>
+    <string name="guide_app_download">Get the App</string>
+    <string name="guide_text_download_app">1、Scan the QR code for app download &amp; send picture from app to frame.</string>
+    <string name="guide_text_bind_device_num">2、Scan the QR code with App for device sync.</string>
+    <string name="device_unique_code_num">Connecting…</string>
+    <string name="already_shield">Blocked</string>
+    <string name="device_unknown">Loading...</string>
+    <string name="no_access">Choose an account…</string>
+    <string name="access_lists">My device</string>
+
+    <string name="show_user_photo_text">Click to check the picture</string>
+    <string name="delete_user_photo_text">Delete the account and pictures</string>
+    <string name="delete_user_text">Delete the account</string>
+    <string name="system_update_text">Firmware Update</string>
+    <string name="system_restore_text">Factory Data Reset</string>
+
+    <string name="language_layout_setting">Language Preferences</string>
+</resources>
