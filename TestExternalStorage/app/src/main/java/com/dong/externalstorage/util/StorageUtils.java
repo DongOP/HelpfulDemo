@@ -70,69 +70,6 @@ public class StorageUtils {
         return fileSizeString;
     }
 
-    // 6.0以上设备获取SD卡路径
-    public static String getStoragePath23(Context context) {
-
-        String path = "";
-
-        if (Build.VERSION.SDK_INT < 23) return path;
-
-
-        StorageManager mStorageManager = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
-        Class<?> volumeInfoClazz = null;
-        Class<?> diskInfoClaszz = null;
-
-        try {
-            volumeInfoClazz = Class.forName("android.os.storage.VolumeInfo");
-            diskInfoClaszz = Class.forName("android.os.storage.DiskInfo");
-
-            Method StorageManager_getVolumes = Class.forName("android.os.storage.StorageManager").getMethod("getVolumes");
-            Method VolumeInfo_GetDisk = volumeInfoClazz.getMethod("getDisk");
-            Method VolumeInfo_GetPath = volumeInfoClazz.getMethod("getPath");
-            Method DiskInfo_IsUsb = diskInfoClaszz.getMethod("isUsb");
-            Method DiskInfo_IsSd = diskInfoClaszz.getMethod("isSd");
-
-            List<Object> List_VolumeInfo = (List<Object>) StorageManager_getVolumes.invoke(mStorageManager);
-            for (int i = 0; i < List_VolumeInfo.size(); i++) {
-                Object volumeInfo = List_VolumeInfo.get(i);
-                Object diskInfo = VolumeInfo_GetDisk.invoke(volumeInfo);
-
-
-                if (diskInfo == null) continue;
-
-                boolean sd = (boolean) DiskInfo_IsSd.invoke(diskInfo);
-
-                File file = (File) VolumeInfo_GetPath.invoke(volumeInfo);
-                // Logger.d("diskinfo="+file.getAbsolutePath()+"; is_usb="+usb+";  is_sd="+sd);
-
-                if (sd && null != file) {//sd
-                    path = file.getAbsolutePath();
-                    break;
-                }
-            }
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return path;
-    }
-
-    /**
-     * 6.0获取U盘路径
-     */
-//    public static String getStoragePathU(Context mContext) {
-//        String path = "";
-//
-//
-//        return path;
-//    }
-
     // 获取6.0以上设备的SD卡路径
     public static String getStoragePath(Context context, boolean isUsb){
 
