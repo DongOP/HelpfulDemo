@@ -2,6 +2,7 @@ package com.dong.data.processing;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -19,6 +20,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Context mContext;
     private Button mPullParseBTN;
     private Button mPullProduceBTN;
+    private Button mJsonBTN;
     private ListView mDataList;
     private ArrayAdapter<Person> mAdapter;
 
@@ -35,9 +37,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mDataList = (ListView) findViewById(R.id.list);
         mPullParseBTN = (Button) findViewById(R.id.pull_parse);
         mPullProduceBTN = (Button) findViewById(R.id.pull_produce);
+        mJsonBTN = (Button) findViewById(R.id.json_btn);
 
         mPullParseBTN.setOnClickListener(this);
         mPullProduceBTN.setOnClickListener(this);
+        mJsonBTN.setOnClickListener(this);
     }
 
     @Override
@@ -58,6 +62,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 persons.add(new Person(3, "鸣人", 30));
 
                 XMLUtils.startSaveXML(mContext, "Anime.xml", persons);
+                break;
+            case R.id.json_btn:
+                startActivity(new Intent(this, JsonActivity.class));
                 break;
             default:
                 break;
