@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">XMLPull</string>
+    <string name="app_name">Json\Xml数据解析</string>
 
     <string name="xml_parse">PULL解析XML</string>
     <string name="xml_produce">PULL生成XML</string>
