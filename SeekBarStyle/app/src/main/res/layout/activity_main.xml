@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:focusable="true"
         android:max="100"
-        android:thumb="@drawable/set_progressbar_focus_point" />
+        android:thumb="@drawable/dot_seekbar" />
 
     <SeekBar
         android:id="@+id/brightness_2"
