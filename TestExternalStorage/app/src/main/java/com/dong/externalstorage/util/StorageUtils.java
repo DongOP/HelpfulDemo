@@ -158,55 +158,61 @@ public class StorageUtils {
         Method mMethodGetPaths = null;
         String[] paths = null;
         String state = null;
-        String path = null;
+        List<String> lists = new ArrayList<String>();
         StorageManager mStorageManager = (StorageManager) context.getSystemService(context.STORAGE_SERVICE);
+        try {
+            mMethodGetPaths = mStorageManager.getClass().getMethod(
+                    "getVolumePaths");
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+        try {
+            if (mMethodGetPaths != null) {
+                paths = (String[]) mMethodGetPaths.invoke(mStorageManager);
+            }
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
 
-        if (Build.VERSION.SDK_INT < 23) {
-            try {
-                mMethodGetPaths = mStorageManager.getClass().getMethod(
-                        "getVolumePaths");
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            }
-            try {
-                if (mMethodGetPaths != null) {
-                    paths = (String[]) mMethodGetPaths.invoke(mStorageManager);
+        mMethodGetPaths = null;
+        for(int i = 0; i < paths.length; i++) {
+            if(paths[i].contains("extsd") || paths[i].contains("usb")){
+                try {
+                    mMethodGetPaths = mStorageManager.getClass().getMethod(
+                            "getVolumeState", String.class);
+                } catch (NoSuchMethodException e) {
+                    e.printStackTrace();
                 }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (IllegalArgumentException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
-                e.printStackTrace();
-            }
-            mMethodGetPaths = null;
-            for (int i = 0; i < paths.length; i++) {
-                // Utils.loge(TAG, "getStoragePathOld...paths[" + i + "]="+ paths[i]);
-                if (paths[i].contains(keyPath)) {
-                    try {
-                        mMethodGetPaths = mStorageManager.getClass().getMethod(
-                                "getVolumeState", String.class);
-                    } catch (NoSuchMethodException e) {
-                        e.printStackTrace();
+                try {
+                    if (mMethodGetPaths != null) {
+                        state = (String) mMethodGetPaths.invoke(mStorageManager, paths[i]);
                     }
-                    try {
-                        if (mMethodGetPaths != null) {
-                            state = (String) mMethodGetPaths.invoke(mStorageManager, paths[i]);
-                        }
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (IllegalArgumentException e) {
-                        e.printStackTrace();
-                    } catch (InvocationTargetException e) {
-                        e.printStackTrace();
-                    }
-                    if (Environment.MEDIA_MOUNTED.equals(state)) {
-                        path = paths[i];
-                    }
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (IllegalArgumentException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+                if (Environment.MEDIA_MOUNTED.equals(state)) {
+                    lists.add(paths[i]);
                 }
             }
         }
-        return path;
+
+//        Utils.logd("dong", "获取4.4机器的外置路径 lists=" + lists.toString());
+        for (String path : lists) {
+            if (path.contains("usb")) {
+//                Utils.loge("dong", "4.4机器的外置U盘路径 path=" + path);
+                return path;
+            }
+        }
+
+        return "";
     }
 
     /**
