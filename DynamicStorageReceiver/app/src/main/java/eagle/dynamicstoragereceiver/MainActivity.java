@@ -7,14 +7,31 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
+import android.os.Message;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+    private static final int WHAT_MEDIA_EJECT = 1;
+    private static final int WHAT_MEDIA_MOUNTED = 2;
+
     private StorageReceiver mStorageReceiver;
-    private TextView mMainText;
-    private Handler mHandler = new Handler();
+    private static TextView mMainText;
+    private static final Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case WHAT_MEDIA_EJECT:
+                    mMainText.setText("ACTION_MEDIA_EJECT...拔出外置存储");
+                    break;
+                case WHAT_MEDIA_MOUNTED:
+                    mMainText.setText("ACTION_MEDIA_MOUNTED...插入外置存储");
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,28 +39,31 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         initView();
-        resgisterStorageReceiver();
+//        resgisterStorageReceiver();
     }
 
     private void initView() {
         mMainText = (TextView) findViewById(R.id.main_text);
     }
 
-    class StorageReceiver extends BroadcastReceiver {
+    public static class StorageReceiver extends BroadcastReceiver {
 
         @Override
         public void onReceive(Context context, final Intent intent) {
             String action = intent.getAction();
-
-            if (Intent.ACTION_MEDIA_EJECT.equals(action) || Intent.ACTION_MEDIA_MOUNTED.equals(action)) {
-
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Log.e("MainActivity", "post UI...action:" + intent.getAction());
-                        mMainText.setText("ExternalDeviceReceiver...action:" + intent.getAction());
-                    }
-                });
+            if (Intent.ACTION_MEDIA_EJECT.equals(action)) {
+                // 拔出外置存储
+                mHandler.sendEmptyMessage(WHAT_MEDIA_EJECT);
+//                mHandler.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        Log.e("MainActivity", "post UI...action:" + intent.getAction());
+//                        mMainText.setText("ExternalDeviceReceiver...action:" + intent.getAction());
+//                    }
+//                });
+            } else if (Intent.ACTION_MEDIA_MOUNTED.equals(action)) {
+                // 插入外置存储
+                mHandler.sendEmptyMessage(WHAT_MEDIA_MOUNTED);
             }
 //            else if (action.equals(ACTION_MEDIA_MOUNTED)) {
 //                Log.e("MainActivity", "ACTION_MEDIA_MOUNTED...action:" + intent.getAction());
@@ -90,7 +110,7 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onStop() {
-        unresgisterStorageReceiver();
+//        unresgisterStorageReceiver();
         super.onStop();
     }
 }

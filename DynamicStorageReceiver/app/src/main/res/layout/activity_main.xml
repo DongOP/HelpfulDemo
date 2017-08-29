@@ -15,5 +15,6 @@
         android:id="@+id/main_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="30sp"
         android:text="动态广播监听外置存储卡的插拔" />
 </RelativeLayout>
