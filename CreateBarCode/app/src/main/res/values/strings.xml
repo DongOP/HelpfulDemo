@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CreateBarCode</string>
+    <string name="bar_code_default_intent">条形码内容</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
