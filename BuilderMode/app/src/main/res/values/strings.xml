@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BuilderMode</string>
+
+    <string name="app_tv_text">Person.Builder builder=new Person.Builder();\nPerson person=builder
+        \n.name("小李")
+        \n.age(18)
+        \n.height(172)
+        \n.weight(56)
+        \n.build();</string>
+    <string name="app_tv_result">Waiting</string>
+
+</resources>
