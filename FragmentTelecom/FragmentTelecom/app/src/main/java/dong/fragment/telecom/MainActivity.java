@@ -12,6 +12,16 @@ import dong.fragment.telecom.event.Event;
 import dong.fragment.telecom.fragment.ContentFragment;
 import dong.fragment.telecom.fragment.TitleFragment;
 
+/**
+ * Fragment间的信息传递：
+ *
+ * 1、接口
+ * 2、EventBus
+ * 3、本地广播 LocalBroadcastManager
+ *
+ * 小结：接口和 EventBus都需要借助宿主Activity进行中转来传递信息；
+ *      本地广播则可以直接传输信息。
+ */
 public class MainActivity extends AppCompatActivity implements TitleFragment.OnButtonClickListener{
 
     private ContentFragment mContentFragment;
