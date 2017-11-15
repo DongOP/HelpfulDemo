@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Fragment信息传输的方式如下:"
+        android:textSize="20sp" />
+
+    <Button
+        android:layout_below="@+id/title_tv"
+        android:id="@+id/interface_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="interface传输消息"
+        android:textAllCaps="false"
+        android:textSize="23sp" />
+
+    <Button
+        android:layout_below="@+id/interface_btn"
+        android:id="@+id/broadcast_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="本地广播传输消息"
+        android:textSize="23sp" />
+
+    <Button
+        android:layout_below="@+id/broadcast_btn"
+        android:id="@+id/eventbus_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="EventBus传输消息"
+        android:textAllCaps="false"
+        android:textSize="23sp" />
+</RelativeLayout>
