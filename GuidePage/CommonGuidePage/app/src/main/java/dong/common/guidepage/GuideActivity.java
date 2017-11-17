@@ -2,6 +2,7 @@ package dong.common.guidepage;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -17,6 +18,7 @@ import java.util.List;
 
 import dong.common.guidepage.adapter.GuideAdapter;
 import dong.common.guidepage.util.CommonUtils;
+import dong.common.guidepage.util.SharePFUtils;
 
 public class GuideActivity extends Activity implements View.OnClickListener, ViewPager.OnPageChangeListener{
 
@@ -40,9 +42,17 @@ public class GuideActivity extends Activity implements View.OnClickListener, Vie
         super.onCreate(savedInstanceState);
         // 去标题, 需要在setContentView方法之前调用
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_guide);
 
-        initView();
+        checkIsFirstLaunch();
+    }
+
+    private void checkIsFirstLaunch() {
+        if (SharePFUtils.getIsFirstLaunch(GuideActivity.this)) {
+            setContentView(R.layout.activity_guide);
+            initView();
+        } else {
+            openActivity(MainActivity.class);
+        }
     }
 
     private void initView() {
@@ -91,6 +101,7 @@ public class GuideActivity extends Activity implements View.OnClickListener, Vie
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_guide_start_experience:
+                openActivity(MainActivity.class);
                 CommonUtils.showToast(mContext, "开始体验APP");
                 break;
             default:
@@ -135,4 +146,20 @@ public class GuideActivity extends Activity implements View.OnClickListener, Vie
     }
     // ViewPager.OnPageChangeListener end
 
+    public void openActivity(Class s){
+        Intent intent = new Intent(this,s);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);// Intent.FLAG_ACTIVITY_NO_ANIMATION |
+
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        finish();
+        overridePendingTransition(0, 0);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SharePFUtils.setNotFirstLaunch(GuideActivity.this);
+    }
 }
