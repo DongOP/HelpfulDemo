@@ -38,7 +38,7 @@ public class SqlUtils {
     /**
      * 增加
      *
-     * 纯sql指令：INSERT INTO user(_id,username,password) VALUES (5, 'Allen', '123456789');
+     * 纯sql指令例子：INSERT INTO user(_id,username,password) VALUES (5, 'Allen', '123456789');
      */
     public void insert(String username, String password) {
 //        String insertSql = "insert into user(username,password) values(?,?)";
@@ -53,7 +53,7 @@ public class SqlUtils {
     /**
      * 删除
      *
-     * 纯sql指令：delete from user where _id=1;
+     * 纯sql指令例子：delete from user where _id=1;
      */
     public void deleteById(String id) {
 //        String deleteSql = "delete from user where _id=?";
@@ -65,7 +65,7 @@ public class SqlUtils {
     /**
      * 查询
      *
-     * 纯sql指令：select * from user
+     * 纯sql指令例子：select * from user;
      */
     public Cursor selectAll() {
 //        String selectSql = "select _id,username,password from user";
@@ -79,7 +79,7 @@ public class SqlUtils {
     /**
      * 修改
      *
-     * 纯sql指令：UPDATE user SET username= 'Zhan', password= "123" where _id = 1;
+     * 纯sql指令例子：UPDATE user SET username= 'Zhan', password= "123" where _id = 1;
      */
     public void update(String username, String password, String id) {
 //        String updateSql = "update user set username=?,password=? where _id=?";
