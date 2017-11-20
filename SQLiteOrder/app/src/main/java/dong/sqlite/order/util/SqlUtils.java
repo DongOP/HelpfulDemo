@@ -36,10 +36,12 @@ public class SqlUtils {
 //    }
 
     /**
-     * 插入
+     * 增加
+     *
+     * 纯sql指令：INSERT INTO user(_id,username,password) VALUES (5, 'Allen', '123456789');
      */
     public void insert(String username, String password) {
-        String insertSql = "insert into user(username,password) values(?,?)";
+//        String insertSql = "insert into user(username,password) values(?,?)";
 //        mDB.execSQL(insertSql, new String[]{username, password});
         SQLiteDatabase db = mDbOpenHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -50,9 +52,11 @@ public class SqlUtils {
 
     /**
      * 删除
+     *
+     * 纯sql指令：delete from user where _id=1;
      */
     public void deleteById(String id) {
-        String deleteSql = "delete from user where _id=?";
+//        String deleteSql = "delete from user where _id=?";
 //        mDB.execSQL(deleteSql, new String[]{id});
         SQLiteDatabase db = mDbOpenHelper.getWritableDatabase();
         db.delete("user", "_id=?", new String[] {id});
@@ -60,9 +64,11 @@ public class SqlUtils {
 
     /**
      * 查询
+     *
+     * 纯sql指令：select * from user
      */
     public Cursor selectAll() {
-        String selectSql = "select _id,username,password from user";
+//        String selectSql = "select _id,username,password from user";
 //        Cursor cursor = mDB.rawQuery(selectSql, null);
         String sql = "select _id,username,password from user";
         SQLiteDatabase db = mDbOpenHelper.getReadableDatabase();
@@ -71,10 +77,12 @@ public class SqlUtils {
     }
 
     /**
-     * 更新
+     * 修改
+     *
+     * 纯sql指令：UPDATE user SET username= 'Zhan', password= "123" where _id = 1;
      */
     public void update(String username, String password, String id) {
-        String updateSql = "update user set username=?,password=? where _id=?";
+//        String updateSql = "update user set username=?,password=? where _id=?";
 //        mDB.execSQL(updateSql, new String[]{username, password, id});
         SQLiteDatabase db = mDbOpenHelper.getReadableDatabase();
         ContentValues values = new ContentValues();
