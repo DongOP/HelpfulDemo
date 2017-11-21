@@ -70,7 +70,7 @@ public class SqlUtils {
     public Cursor selectAll() {
 //        String selectSql = "select _id,username,password from user";
 //        Cursor cursor = mDB.rawQuery(selectSql, null);
-        String sql = "select _id,username,password from user";
+        String sql = "select * from user";
         SQLiteDatabase db = mDbOpenHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(sql, null);
         return cursor;
@@ -79,7 +79,7 @@ public class SqlUtils {
     /**
      * 修改
      *
-     * 纯sql指令例子：UPDATE user SET username= 'Zhan', password= "123" where _id = 1;
+     * 纯sql指令例子：UPDATE user SET username= "ZDD", password= "321" where _id = 1;
      */
     public void update(String username, String password, String id) {
 //        String updateSql = "update user set username=?,password=? where _id=?";

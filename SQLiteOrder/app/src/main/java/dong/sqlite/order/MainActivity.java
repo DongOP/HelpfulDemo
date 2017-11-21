@@ -134,11 +134,21 @@ public class MainActivity extends AppCompatActivity {
      */
     public void replaceList() {
         Cursor cursor = SqlUtils.getInstance(mContext).selectAll();
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-                R.layout.list_item, cursor, new String[]{"_id", "username",
-                "password"}, new int[]{R.id.list_id, R.id.list_username,
-                R.id.list_password},
-                SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+        SimpleCursorAdapter adapter = null;
+//            adapter = new SimpleCursorAdapter(this,
+//                    R.layout.list_item, cursor, new String[]{"_id", "username",
+//                    "password"}, new int[]{R.id.list_id, R.id.list_username,
+//                    R.id.list_password},
+//                    SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+
+            adapter = new SimpleCursorAdapter(
+                    this,
+                    R.layout.list_item,
+                    cursor,
+                    new String[]{"_id", "username", "password", "isVip"},
+                    new int[]{R.id.list_id, R.id.list_username, R.id.list_password, R.id.list_isVip},
+                    SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER
+            );
         mListView.setAdapter(adapter);
     }
 
