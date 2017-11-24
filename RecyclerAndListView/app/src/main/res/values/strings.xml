@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">RecyclerAndListView</string>
+
+    <string-array name="settings_menu_titles">
+        <item>绑定</item>
+        <item>日期设置</item>
+        <item>Wi-Fi设置</item>
+        <item>存储管理</item>
+        <item>系统设置</item>
+        <item>关于</item>
+    </string-array>
+</resources>
