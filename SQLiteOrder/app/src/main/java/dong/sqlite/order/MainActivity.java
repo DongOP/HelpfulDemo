@@ -145,8 +145,8 @@ public class MainActivity extends AppCompatActivity {
                     this,
                     R.layout.list_item,
                     cursor,
-                    new String[]{"_id", "username", "password", "isVip"},
-                    new int[]{R.id.list_id, R.id.list_username, R.id.list_password, R.id.list_isVip},
+                    new String[]{"_id", "username", "password"},
+                    new int[]{R.id.list_id, R.id.list_username, R.id.list_password},
                     SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER
             );
         mListView.setAdapter(adapter);

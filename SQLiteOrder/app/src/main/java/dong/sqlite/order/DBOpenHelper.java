@@ -10,16 +10,17 @@ import android.util.Log;
  */
 
 public class DBOpenHelper extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 9;
+    private static final int DATABASE_VERSION = 2;
     private static final String DBName = "Dong.db";
 
     // 数据库升级 start
     private String CREATE_TEMP_USER = "alter table user rename to _temp_user";
+    // 创建新数据库，增加 isVip 数据
     private String CREATE_USER = ("CREATE TABLE IF NOT EXISTS user ("
             + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
             + "username varchar(64),"
             + "password varchar(64),"
-            + "isVip INTEGER)");
+            + "isVip varchar(64))");
     // 旧数据库中的_id,username,password数据移到新表中
     private String INSERT_DATA = "insert into user select _id,username,password,'' from _temp_user";
     private String DROP_USER = "drop table _temp_user";
@@ -34,7 +35,6 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS user ("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "username varchar(64),"
-                + "isVip varchar(64),"
                 + "password varchar(64))");
     }
 
