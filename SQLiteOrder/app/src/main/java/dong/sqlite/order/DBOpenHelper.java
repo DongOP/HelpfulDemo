@@ -34,6 +34,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS user ("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "username varchar(64),"
+                + "isVip varchar(64),"
                 + "password varchar(64))");
     }
 
