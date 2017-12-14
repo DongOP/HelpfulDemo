@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_menu_categories"
+            android:icon="@mipmap/ic_home_white_48dp"
+            android:checked="true"
+            android:title="苟生苟死苟残喘" />
+
+        <item
+            android:id="@+id/nav_menu_setting"
+            android:icon="@mipmap/ic_settings_white_48dp"
+            android:title="亦祸亦福亦趋之" />
+
+        <item
+            android:id="@+id/nav_menu_feedback"
+            android:icon="@mipmap/ic_message_white_48dp"
+            android:title="利家利国利天下" />
+        <item
+            android:id="@+id/nav_menu_loginOut"
+            android:icon="@mipmap/login_out"
+            android:title="泽民泽世泽众生" />
+
+        <item
+            android:id="@+id/action_other"
+            android:checked="false"
+            android:title="兹持">
+
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/action_qq"
+                        android:checked="false"
+                        android:icon="@android:drawable/ic_btn_speak_now"
+                        android:title="钦点" />
+
+                    <item
+                        android:id="@+id/action_weixin"
+                        android:checked="false"
+                        android:icon="@android:drawable/ic_dialog_alert"
+                        android:title="闷声发大财" />
+
+                </group>
+            </menu>
+        </item>
+
+    </group>
+</menu>
