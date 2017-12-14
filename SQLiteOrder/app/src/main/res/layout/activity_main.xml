@@ -17,12 +17,14 @@
         android:hint="Password" />
 
     <Button
+        android:id="@+id/btn_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="save"
         android:text="SAVE" />
 
     <Button
+        android:id="@+id/btn_read"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="read"

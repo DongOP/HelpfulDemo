@@ -141,14 +141,14 @@ public class MainActivity extends AppCompatActivity {
 //                    R.id.list_password},
 //                    SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
 
-            adapter = new SimpleCursorAdapter(
-                    this,
-                    R.layout.list_item,
-                    cursor,
-                    new String[]{"_id", "username", "password"},
-                    new int[]{R.id.list_id, R.id.list_username, R.id.list_password},
-                    SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER
-            );
+        adapter = new SimpleCursorAdapter(
+                this,
+                R.layout.list_item,
+                cursor,
+                new String[]{"_id", "username", "password"},
+                new int[]{R.id.list_id, R.id.list_username, R.id.list_password},
+                SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER
+        );
         mListView.setAdapter(adapter);
     }
 
