@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-
         mPsdText = (PasswordExitText) findViewById(R.id.psd_ed);
     }
 }

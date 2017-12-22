@@ -8,13 +8,16 @@
     android:gravity="center"
     tools:context="com.eagle.psdedittext.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
     <com.eagle.psdedittext.view.PasswordExitText
         android:id="@+id/psd_ed"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_bg"
+        android:textCursorDrawable="@null"
+        style="@style/dialog_input_style" />
+
+    <com.eagle.psdedittext.view.PasswordEditText2
+        android:id="@+id/psd_ed_2"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_bg"
