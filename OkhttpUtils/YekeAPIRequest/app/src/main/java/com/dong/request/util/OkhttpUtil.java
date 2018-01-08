@@ -225,4 +225,47 @@ public class OkhttpUtil {
         });
     }
 
+    /**
+     * 带参数的 delete 请求
+     * @param url 请求的url链接
+     * @param tokenId 授权码
+     * @param params 请求携带的参数
+     * @param callBack 请求的回调
+     */
+    public void doDeleteUser(String url, String tokenId, Map<String, Object> params, final WXCallBack callBack) {
+//        FormBody body = new FormBody.Builder().build();
+        // 设置媒体类型
+        JSONObject jsonParams = new JSONObject(params);
+        RequestBody body = RequestBody.create(MEDIA_TYPE_JSON, jsonParams.toString());
+        Request request = new Request.Builder()
+                .addHeader("Content-Type", "application/json")
+                .addHeader("Accept", "application/json")
+                .addHeader("Authorization", "Bearer " + tokenId)
+                .url(url)
+                .delete(body)
+                .build();
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                // 请求失败
+                if (callBack != null) {
+                    callBack.onRequestFail(e.toString());
+                }
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (callBack != null) {
+                    try {
+                        String result = response.body().string();
+                        callBack.onRequestComplete(result);
+                        callBack.onRequestWithResponse(null);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
+
 }
