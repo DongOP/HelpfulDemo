@@ -5,6 +5,7 @@ package com.dong.untitled.util;
  */
 public class BubbleSort {
 
+    // ## ![](/program_photos/bubble_parse.png)
     public static void bubbleSort(int[] arr) {
         int temp;
         for (int i = 0; i < arr.length - 1; i++) { // 趟数
