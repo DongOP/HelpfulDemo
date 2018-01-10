@@ -1,6 +1,7 @@
-package com.dong.untitled;
+package com.dong.untitled.test;
 
-import com.dong.untitled.util.BubbleSort;
+import com.dong.untitled.algorithm.BubbleSort;
+import com.dong.untitled.singlecase.Singleton;
 
 import java.util.Arrays;
 
@@ -15,6 +16,11 @@ public class TestBubbleSort {
         System.out.println("Before =" + Arrays.toString(TEST_ARR));
         BubbleSort.bubbleSort(TEST_ARR);
         System.out.println("After Bubble Sort =" + Arrays.toString(TEST_ARR));
+    }
+
+    private static void testSingleton() {
+        // 饿汉式单例模式
+        Singleton singleton = Singleton.getInstance();
     }
 
 }
