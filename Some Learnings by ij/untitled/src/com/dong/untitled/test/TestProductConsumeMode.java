@@ -15,7 +15,7 @@ public class TestProductConsumeMode {
     public static void main(String[] args) {
         // 创建集合
         List<ProductBean> productList = new LinkedList<ProductBean>();
-        // 初始化线程
+        // 初始化并开启线程
         ProductThread productThread = new ProductThread(productList);
         ConsumeThread consumeThread = new ConsumeThread(productList);
         productThread.start();
