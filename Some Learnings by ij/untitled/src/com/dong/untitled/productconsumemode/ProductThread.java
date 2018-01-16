@@ -28,8 +28,8 @@ public class ProductThread extends Thread {
             synchronized (mList) {
                 while (mList.size() > 0) {
                     try {
-                        mList.wait();
                         System.out.println("ProductThread-------库内有产品，生产者 wait()");
+                        mList.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -41,9 +41,9 @@ public class ProductThread extends Thread {
                     product.setId(count);
                     product.setName("第" + count + "个产品");
                     mList.add(product);
+                    System.out.println("ProductThread-------生产了第" + count + "号产品  notify()");
                     // 通知消费者线程
                     mList.notify();
-                    System.out.println("ProductThread-------生产了第" + count + "号产品  notify()");
                 }
             }
         }

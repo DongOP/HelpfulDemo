@@ -21,14 +21,14 @@ public class ConsumeThread extends Thread {
                 while (mList.size() > 0) {
                     for (int i = 0; i < mList.size(); i++) {
                         mList.remove(i);
-                        mList.notify();
                         System.out.println("------ConsumeThread---------消费者取出了产品 notify()");
+                        mList.notify();
                     }
                 }
                 while (mList.size() == 0) {
                     try {
-                        mList.wait();
                         System.out.println("------ConsumeThread---------队列中已没有了产品，请继续生产！进入wait()");
+                        mList.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
