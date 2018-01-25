@@ -30,13 +30,15 @@ public class SuiShouJiSort {
 
     // 对出现的次数进行排序(从大到小)
     private static List<Integer> sortListDesc(List<Integer> list) {
-        Collections.sort(list, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                // 返回相反的compare
-                return o2.compareTo(o1);
-            }
-        });
+//        Collections.sort(list, new Comparator<Integer>() {
+//            @Override
+//            public int compare(Integer o1, Integer o2) {
+//                // 返回相反的compare
+//                return o2.compareTo(o1);
+//            }
+//        });
+        // java 8
+        Collections.sort(list, (o1, o2) -> o2.compareTo(o1));
         return list;
     }
 
