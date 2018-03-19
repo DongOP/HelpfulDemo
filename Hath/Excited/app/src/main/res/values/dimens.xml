@@ -4,4 +4,139 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="toolbar_padding_top">0dp</dimen>
+    <dimen name="image_vertical_margin">16dp</dimen>
+    <dimen name="image_horizontal_margin">16dp</dimen>
+    <dimen name="gallery_menu_height">80dp</dimen>
+    <dimen name="gallery_button_width">105dp</dimen>
+    <dimen name="gallery_button_height">52dp</dimen>
+    <dimen name="gallery_button_margin">90dp</dimen>
+    <dimen name="image_layout_width">215dp</dimen>
+    <dimen name="image_layout_height">215dp</dimen>
+    <dimen name="image_layout_padding">3dp</dimen>
+    <dimen name="huge_font_size">38sp</dimen>
+    <dimen name="large_font_size">27sp</dimen>
+    <dimen name="big_font_size">24sp</dimen>
+    <dimen name="middle_font_size">22sp</dimen>
+    <dimen name="small_font_size">18sp</dimen>
+    <dimen name="settings_menu_list_hight">100dp</dimen>
+    <dimen name="settings_menu_icon_list_hight">100dp</dimen>
+    <dimen name="settings_menu_icon_size">20dp</dimen>
+    <dimen name="settings_divider_height">1.2dp</dimen>
+    <dimen name="settings_divider_weight">1.2dp</dimen>
+    <dimen name="base_padding">16dp</dimen>
+    <dimen name="textsize_large">32sp</dimen>
+    <dimen name="textsize_medium">24sp</dimen>
+    <dimen name="textsize_small">18sp</dimen>
+    <dimen name="text_margin">30dp</dimen>
+    <dimen name="content_textsize">27sp</dimen>
+    <dimen name="setting_textsize">23sp</dimen>
+    <dimen name="reminder_none_photo_height">300dp</dimen>
+
+    <!-- about fragment -->
+    <dimen name="fragment_margin">40dp</dimen>
+
+    <!-- about scrollBar -->
+    <dimen name="albumscroll_layoutwidth">180dp</dimen>
+    <dimen name="albumscroll_marginleft">10dp</dimen>
+    <dimen name="albumscroll_marginright">0dp</dimen>
+    <dimen name="albumscroll_paddingleft">5dp</dimen>
+    <dimen name="albumscroll_paddingright">0dp</dimen>
+
+    <!-- Album相关 -->
+    <dimen name="albumitem_spacing">1dp</dimen>
+    <dimen name="albumitem_height">100dp</dimen>
+    <dimen name="albumitem_content_height">80dp</dimen>
+    <dimen name="albumitem_image_height">20dp</dimen>
+
+    <dimen name="albumitem_del_move_height">80dp</dimen>
+    <dimen name="albumitem_button_width">170dp</dimen>
+
+    <!-- CheckBox相关 -->
+    <dimen name="checkbox_height">25dp</dimen>
+
+    <!-- Title 相关高度 -->
+    <dimen name="layout_title_heigh">120dp</dimen>
+    <dimen name="layout_title_content_heigh">30dp</dimen>
+    <dimen name="layout_title_mini_textsize">16sp</dimen>
+
+    <!-- 图片选择界面Item相关 -->
+    <dimen name="sticky_item_horizontalSpacing">2dp</dimen>
+    <dimen name="sticky_item_verticalSpacing">2dp</dimen>
+    <dimen name="collection_photo_toolbar_height">45dp</dimen>
+
+    <dimen name="settings_margin_right">32dp</dimen>
+
+    <!-- for umeng -->
+    <dimen name="body_padding_medium">10dp</dimen>
+    <dimen name="body_padding_large">10dp</dimen>
+    <dimen name="text_size_small">15sp</dimen>
+    <dimen name="text_size_medium">19sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">18sp</dimen>
+    <dimen name="speaker_image_size">36dp</dimen>
+    <dimen name="speaker_image_padding">8dp</dimen>
+    <dimen name="vendor_image_size">100dp</dimen>
+    <dimen name="actionbar_height">45dip</dimen>
+    <dimen name="actionbar_item_height">45dip</dimen>
+    <dimen name="actionbar_item_width">45dip</dimen>
+
+    <!-- setting -->
+    <dimen name="setting_content_heigh">90dp</dimen>
+    <dimen name="setting_qrcode_heigh">200dp</dimen>
+    <dimen name="setting_qrcode_width">200dp</dimen>
+    <dimen name="setting_gettingLayout_width">230dp</dimen>
+    <dimen name="setting_gettingLayout_height">230dp</dimen>
+    <dimen name="setting_margin">20dp</dimen>
+    <dimen name="setting_user_height">70dp</dimen>
+    <dimen name="setting_user_width">70dp</dimen>
+    <dimen name="setting_big_margin">100dp</dimen>
+    <dimen name="setting_manage_width">150dp</dimen>
+    <dimen name="settings_dlg_title_min_height">40dp</dimen>
+
+    <!--  dialog -->
+    <dimen name="dialog_title_text_size">28sp</dimen>
+    <dimen name="dialog_message_text_size">23sp</dimen>
+    <dimen name="dialog_editer_text_size">25sp</dimen>
+    <dimen name="dialog_button_text_size">25dp</dimen>
+    <!-- dialog信息首行缩进的字符个数 -->
+    <dimen name="dialog_message_indent_size">8dp</dimen>
+
+    <!-- single_dialog -->
+    <dimen name="divider_margin">8dp</dimen>
+    <dimen name="settings_dlg_width">400dp</dimen>
+    <dimen name="settings_dlg_height">260dp</dimen>
+    <dimen name="settings_margin_left">16dp</dimen>
+    <dimen name="settings_dlg_item_height">60dp</dimen>
+
+    <dimen name="main_icon_image_size">80dp</dimen>
+
+    <!-- guide -->
+    <dimen name="guide_title_height">106dp</dimen>
+    <dimen name="guide_title_margin_left">118dp</dimen>
+    <dimen name="guide_title_text_size">45dp</dimen>
+    <dimen name="guide_qrcode_margin_top">48dp</dimen>
+    <dimen name="guide_margin_s">15dp</dimen>
+    <dimen name="guide_margin_m">40dp</dimen>
+
+    <!-- settings -->
+    <dimen name="settings_title_height">130dp</dimen>
+    <dimen name="info_qrcode_size">280dp</dimen>
+    <dimen name="info_qrcode_margin_top">50dp</dimen>
+
+    <!--返回按钮  -->
+    <dimen name="back_margin_left">40dp</dimen>
+    <dimen name="back_margin_top">18dp</dimen>
+
+    <dimen name="albumitem_margin_top">5dp</dimen>
+    <dimen name="albumitem_margin_button">5dp</dimen>
+
+    <dimen name="settings_item_height">80dp</dimen>
+
+    <dimen name="fragment_abroad_qrcode_layout_height">140dp</dimen>
+    <dimen name="fragment_abroad_qrcode_height">120dp</dimen>
+    <dimen name="fragment_guide_qrcode_height">150dp</dimen>
+    <dimen name="guide_text_padding">120dp</dimen>
+    <dimen name="gallery_thumbnail_size">100dp</dimen>
+    <dimen name="gallery_text_height">72dp</dimen>
+    <integer name="gallery_column_num">6</integer>
 </resources>

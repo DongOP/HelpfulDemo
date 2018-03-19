@@ -36,4 +36,63 @@
     <color name="c_stock_green" >#347724</color>
 
     <color name="c_light_yellow" >#F8AC48</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#a1a1a1</color>
+    <color name="theme_color_pressed">#005b7f</color>
+    <color name="menu_bg">#001a27</color>
+    <color name="yellow">#ffff00</color>
+    <color name="dark">#ff222222</color>
+    <color name="light">#ffeeeeee</color>
+    <color name="darkred">#8B0000</color><!-- 暗红色 -->
+    <color name="crimson">#DC143C</color><!--暗深红色 -->
+    <color name="del_btn_color">#ffff3d3d</color>
+    <color name="export_btn_color">#ff22ad38</color>
+    <color name="progress_white">#cccccc</color>
+    <color name="progress_green">#22ab37</color>
+    <color name="grey_translucence">#8fa1a1a1</color><!-- 半透明 -->
+    <color name="blue">#2c4c61</color>
+    <color name="black99">#99000000</color>
+    <color name="transport">#00000000</color>
+    <color name="mblue">#33b5e5</color>
+
+    <drawable name="theme_color_pressed">#005b7f</drawable>
+    <drawable name="transparent">#00000000</drawable>
+    <drawable name="translucent">#f5000000</drawable>
+    <drawable name="list_divider">#102a37</drawable>
+
+    <color name="dialog_top_bg">#ffffff</color>
+    <color name="dialog_content_bg">#ffffff</color>
+    <color name="dialog_color_pressed">#356e3d</color>
+    <color name="dialog_color_normal">#5baa66</color>
+    <color name="dialog_listview_color_press">#2AAFF1</color>
+    <drawable name="single_choice_list_divider">#dcdddd</drawable>
+
+    <!-- for umeng -->
+    <color name="body_text_1">#ff000000</color>
+    <color name="body_text_2">#99000000</color>
+    <color name="body_text_disabled">#66000000</color>
+    <color name="body_text_1_inverse">#ffffffff</color>
+    <color name="body_text_2_inverse">#99ffffff</color>
+    <color name="accent_1">#ff29549f</color>
+    <color name="hyperlink">#ffff549f</color>
+    <color name="background_1">#ffffffff</color>
+    <color name="whats_on_separator">#4d000000</color>
+    <color name="all_track_color">#ff222222</color>
+    <color name="block_column_1">#ff0fabff</color>
+    <color name="block_column_2">#ffdf1831</color>
+    <color name="block_column_3">#ff009939</color>
+
+    <color name="guide_color_normal">#0079ff</color>
+    <color name="guide_color_special">#fa5455</color>
+    <color name="guide_color_title">#efeff0</color>
+    <drawable name="title_line">#e4e4e4</drawable>
+    <color name="theme_color_normal">#5291fc</color>
+
+    <color name="bg">#294f6f</color>
+    <color name="green">#5baa66</color>
+    <color name="bg_menu_item">#005693</color>
+    <!-- 黑色背景色 000c08 -->
+    <color name="bg_setting_content_502">#294f6f</color>
+    <color name="gallery_text_shadow_color">#cc000000</color>
 </resources>

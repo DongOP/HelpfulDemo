@@ -21,6 +21,10 @@
         <activity
             android:name="too.young.toosimple.actionbar.ActionBarActivity"
             android:theme="@style/AppThemeActionBar" />
+
+        <receiver android:name="too.young.toosimple.alarm.ScheduleSleepReceiver"/>
+        <receiver android:name="too.young.toosimple.alarm.ScheduleWakeupReceiver"/>
+
     </application>
 
 </manifest>

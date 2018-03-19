@@ -22,8 +22,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import too.young.too.simple.R;
 import too.young.toosimple.fragment.MyListFragment;
+import too.young.toosimple.fragment.TimePickerFragment;
 
 public class ToolBarActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -131,7 +133,7 @@ public class ToolBarActivity extends AppCompatActivity implements NavigationView
 
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new MyListFragment(), "你一秒");
+        adapter.addFragment(new TimePickerFragment(), "TimePicker");
         adapter.addFragment(new MyListFragment(), "我一秒");
         adapter.addFragment(new MyListFragment(), "万里长城永不倒");
         viewPager.setAdapter(adapter);
